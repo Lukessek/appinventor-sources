@@ -269,15 +269,18 @@ public final class Dates {
    * @return  Calendar (instant in time)
    */
   @SimpleFunction
-  public static Calendar TimeInstant(int hour, int minute) {
+  public static Calendar TimeInstant(int hour, int minute, int second) {
     String hour_str = String.valueOf(hour);
     String minute_str = String.valueOf(minute);
+    String second_str = String.valueOf(second);
     String time;
     if (hour < 10)
       hour_str = "0" + hour_str;
     if (minute < 10)
       minute_str = "0" + minute_str;
-    time = hour_str + ":" + minute_str;
+    if (second < 10)
+      second_str = "0" + second_str;
+    time = hour_str + ":" + minute_str + ":" + second_str;
     return Dates.DateValue(time);
   }
 
@@ -352,7 +355,7 @@ public final class Dates {
   }
 
   /**
-   * Returns the current system time in milliseconds.
+   * Returns the current system in milliseconds.
    *
    * @return  current system time in milliseconds
    */
