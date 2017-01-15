@@ -59,7 +59,7 @@ import java.util.Calendar;
     final Calendar c = Calendar.getInstance();
     hour = c.get(Calendar.HOUR_OF_DAY);
     minute = c.get(Calendar.MINUTE);
-    second = c.get(calendar.SECOND);
+    second = c.get(Calendar.SECOND);
     time = new TimePickerDialog(this.container.$context(),
         timePickerListener, hour, minute, second, DateFormat.is24HourFormat(this.container.$context()));
 
